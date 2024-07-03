@@ -1,0 +1,59 @@
+{
+	"generator": {
+		"active": "bool",
+		"counter": "int",
+		"sigma": "double"
+	},
+	"states": {
+		"passive": [
+			false,
+			0,
+			"inf"
+		],
+		"init": "passive"
+	},
+	"ports": {
+		"input": [
+			{
+				"in": "int"
+			}
+		],
+		"output": [
+			{
+				"out": "int"
+			}
+		]
+	},
+	"del_int": {
+		"increment": {
+			"increment": [
+				true,
+				"state.counter + 1",
+				1.0
+			]
+		}
+	},
+	"del_ext": {
+		"in": {
+			"passive": {
+				"increment": [
+					true,
+					0,
+					1.0
+				]
+			},
+			"increment": {
+				"passive": [
+					false,
+					0,
+					"inf"
+				]
+			}
+		}
+	},
+	"lambda": {
+		"increment": {
+			"out": "counter"
+		}
+	}
+}

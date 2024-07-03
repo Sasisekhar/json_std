@@ -1,0 +1,44 @@
+{
+    "activate": {
+        "active": "int",
+        "sigma": "double"
+    },
+    "states": {
+        "active": [
+            1,
+            5.0
+        ],
+        "init": "active"
+    },
+    "ports": {
+        "input": [],
+        "output": [
+            {
+                "out": "int"
+            }
+        ]
+    },
+    "del_int": {
+        "active": {
+            "passive": [
+                0,
+                10.0
+            ]
+        },
+        "passive": {
+            "active": [
+                0,
+                5.0
+            ]
+        }
+    },
+    "del_ext": {},
+    "lambda": {
+        "active": {
+            "out": "active"
+        },
+        "passive": {
+            "out": "active"
+        }
+    }
+}

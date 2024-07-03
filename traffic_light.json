@@ -1,0 +1,31 @@
+{
+    "traffic_light":{
+        "color": "std::string",
+        "sigma": "double"
+    },
+    "states":{
+        "init":"Red",
+        "Red":["\"RED\"", 5.0]
+    },
+    "ports":{
+        "input":[],
+        "output":[{"LED":"std::string"}]
+    },
+    "del_int":{
+        "Red":{
+            "Green": ["\"GREEN\"", 5.0]
+        },
+        "Green": {
+            "Amber": ["\"AMBER\"", 2.0]
+        },
+        "Amber": {
+            "Red": ["\"RED\"", 5.0]
+        }
+    },
+    "del_ext": {},
+    "lambda": {
+        "Red":{"LED":"color"},
+        "Amber":{"LED":"color"},
+        "Green":{"LED":"color"}
+    }
+}
