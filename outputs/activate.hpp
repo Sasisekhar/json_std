@@ -31,7 +31,7 @@ public:
 			state.sigma = 10.0;
 			state.currState = "passive";
 		}
-		else 		if (state.currState == "passive") {
+		else if (state.currState == "passive") {
 			state.active = true;
 			state.sigma = 5.0;
 			state.currState = "active";
