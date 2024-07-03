@@ -1,0 +1,32 @@
+{
+    "top": {
+        "components": {
+            "counter": {
+                "component_id": "increment",
+                "kwargs": {}
+            },
+            "activate": {
+                "component_id": "button",
+                "kwargs": {}
+            },
+            "traffic_light": {
+                "component_id": "toy",
+                "kwargs": {}
+            }
+        },
+        "couplings": [
+            {
+                "componentFrom": "button",
+                "portFrom": "out",
+                "componentTo": "increment",
+                "portTo": "in"
+            },
+            {
+                "componentFrom": "button",
+                "portFrom": "out",
+                "componentTo": "toy",
+                "portTo": "in"
+            }
+        ]
+    }
+}

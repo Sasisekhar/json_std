@@ -4,7 +4,7 @@
         "sigma": "double"
     },
     "state0": {
-        "active": [true, 12.0]
+        "active": [true, 5.0]
     },
     "ports": {
         "input": [],
@@ -12,10 +12,10 @@
     },
     "del_int": {
         "active": {
-            "passive": [false, 5.0]
+            "passive": [false, 10.0]
         },
         "passive": {
-            "active": [true, 12.0]
+            "active": [true, 5.0]
         }
     },
     "del_ext": {},
