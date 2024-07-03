@@ -8,7 +8,7 @@ if len(sys.argv) < 2:
 jsonFile = open(sys.argv[1], 'r')
 jsonFile = json.load(jsonFile)
 
-kw = ['states', 'ports', 'del_int', 'del_ext', 'lambda']
+kw = ['state0', 'ports', 'del_int', 'del_ext', 'lambda']
 
 atomicName_list = [x for x in jsonFile.keys() if x not in kw]
 if (len(atomicName_list) > 1) :
@@ -44,7 +44,7 @@ hpp_content += "std::string currState;\n"
 hpp_content += f"\n explicit {atomicName}State(): "
 
 #Get the initial state
-initSV = jsonFile['states']['init']
+initSV = jsonFile['state0']['init']
 
 
 for i in range(0, len(stateVariables)):
@@ -57,12 +57,12 @@ for i in range(0, len(stateVariables)):
             hpp_content += f"{stateVariables[i]}(true), "
 
     #inf is converted to cpp infinity
-    elif(jsonFile['states'][initSV][i] == 'inf'):
+    elif(jsonFile['state0'][initSV][i] == 'inf'):
         hpp_content += f"{stateVariables[i]}(std::numeric_limits<double>::infinity()), "
 
     #No conditions otherwise
     else:
-        hpp_content += f"{stateVariables[i]}({jsonFile['states'][initSV][i]}), "
+        hpp_content += f"{stateVariables[i]}({jsonFile['state0'][initSV][i]}), "
 
     #Ending the state constructor
     if(i == len(stateVariables) - 1):

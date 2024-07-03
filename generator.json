@@ -4,7 +4,7 @@
 		"counter": "int",
 		"sigma": "double"
 	},
-	"states": {
+	"state0": {
 		"passive": [
 			false,
 			0,

@@ -3,7 +3,7 @@
         "active": "int",
         "sigma": "double"
     },
-    "states": {
+    "state0": {
         "active": [
             1,
             5.0

@@ -5,7 +5,7 @@
         "<SVn>": "<data_typen>",
         "sigma": "<double>"
     },
-    "states":{
+    "state0":{
         "<STATE1>":["<val1>", "<val2>", "<valn>", 10.0],
         "init": "<STATE1>"
     },
