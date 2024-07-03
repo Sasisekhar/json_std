@@ -5,50 +5,28 @@
 		"sigma": "double"
 	},
 	"state0": {
-		"passive": [
-			false,
-			0,
-			"inf"
-		],
-		"init": "passive"
+		"passive": [false, 0, "inf"]
 	},
 	"ports": {
-		"input": [
-			{
-				"in": "int"
-			}
-		],
-		"output": [
-			{
-				"out": "int"
-			}
-		]
+		"input": [{"in": "bool"}],
+		"output": [{"out": "int"}]
 	},
 	"del_int": {
 		"increment": {
-			"increment": [
-				true,
-				"state.counter + 1",
-				1.0
-			]
+			"increment": [true, "state.counter + 1", 1.0]
 		}
 	},
 	"del_ext": {
-		"in": {
-			"passive": {
-				"increment": [
-					true,
-					0,
-					1.0
-				]
-			},
-			"increment": {
-				"passive": [
-					false,
-					0,
-					"inf"
-				]
-			}
+		"in": { "input == true": {
+					"passive": {
+						"increment": ["input", 0, 1.0]
+					}
+				},
+				"input == false": {
+					"increment": {
+						"passive": ["input", 0, "inf"]
+					}
+				}
 		}
 	},
 	"lambda": {

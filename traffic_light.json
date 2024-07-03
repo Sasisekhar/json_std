@@ -4,7 +4,6 @@
         "sigma": "double"
     },
     "state0":{
-        "init":"Red",
         "Red":["\"RED\"", 5.0]
     },
     "ports":{
