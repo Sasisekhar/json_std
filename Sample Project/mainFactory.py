@@ -47,6 +47,6 @@ int main() {{
 cpp_file = open(f"{destination}/main/main.cpp", "w")
 cpp_file.write(cpp_content)
 
-makefile = "sim:\n\tg++ -std=gnu++20 -I include/ main.cpp -o run"
+makefile = "sim:\n\tg++ -std=gnu++20 -I include/ main.cpp -o simulate"
 makefile_file = open(f"{destination}/main/makefile", "w")
 makefile_file.write(makefile)
