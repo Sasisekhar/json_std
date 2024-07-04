@@ -23,7 +23,7 @@
     },
     "del_ext": {
         "in" : {
-            "input == false": {
+            "x == false": {
                 "Red":{
                     "Passive": ["\"OFF\"", "inf"]
                 },
@@ -34,7 +34,7 @@
                     "Passive": ["\"OFF\"", "inf"]
                 }
             },
-            "input == true": {
+            "x == true": {
                 "Passive": {
                     "Red": ["\"RED\"", 5.0]
                 }

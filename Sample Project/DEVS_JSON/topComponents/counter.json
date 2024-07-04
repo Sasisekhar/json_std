@@ -17,14 +17,14 @@
 		}
 	},
 	"del_ext": {
-		"in": { "input == true": {
+		"in": { "x == true": {
 					"passive": {
-						"increment": ["input", 0, 1.0]
+						"increment": ["x", 0, 1.0]
 					}
 				},
-				"input == false": {
+				"x == false": {
 					"increment": {
-						"passive": ["input", 0, "inf"]
+						"passive": ["x", 0, "inf"]
 					}
 				}
 		}

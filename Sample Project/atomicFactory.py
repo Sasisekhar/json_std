@@ -141,9 +141,9 @@ struct {atomicName}State {{\n"""
         hpp_content += f"\t\tif(!{portName}->empty()) {{"
 
         #Create Variable to store input
-        hpp_content += f"\n\t\t\t{port[portName]} input;"
+        hpp_content += f"\n\t\t\t{port[portName]} x;"
 
-        hpp_content += f"\n\t\t\tfor(const auto &x : {portName}->getBag()){{\n\t\t\t\tinput = x;\n\t\t\t}}\n"
+        hpp_content += f"\n\t\t\tfor(const auto &input : {portName}->getBag()){{\n\t\t\t\tx = input;\n\t\t\t}}\n"
 
         #Conditions on input, per port
         inputConds = list(jsonFile['del_ext'][portName].keys())
@@ -179,8 +179,8 @@ struct {atomicName}State {{\n"""
                             hpp_content += f"\t\t\t\t\tstate.{sv} = true;\n"
                     elif(svValue == 'inf'):
                         hpp_content += f"\t\t\t\t\tstate.{sv} = std::numeric_limits<double>::infinity();\n"
-                    elif(svValue == 'x'):
-                        hpp_content += f"\t\t\t\t\tstate.{sv} = input;\n"
+                    # elif(svValue == 'x'):
+                    #     hpp_content += f"\t\t\t\t\tstate.{sv} = input;\n"
                     else:
                         hpp_content += f"\t\t\t\t\tstate.{sv} = {svValue};\n"
                     j += 1
